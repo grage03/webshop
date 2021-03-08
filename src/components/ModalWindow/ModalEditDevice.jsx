@@ -33,7 +33,7 @@ const ModalEditDevice = observer(({ isDeviceEdit, setIsDeviceEdit }) => {
         setDeviceProperties(deviceProperties.map(item => item.id === id ? {...item, [key]: value} : item));
     };
 
-    function addDeviceProperties() {
+    const addDeviceProperties = () => {
         setDeviceProperties([...deviceProperties, {
             id: getId(1, 20000),
             name: '',

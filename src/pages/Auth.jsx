@@ -53,7 +53,6 @@ const Auth = () => {
                     ? <ShowAlert variant={statusAlert} setAlert={setAlert}/> 
                     : null 
             }
-            {console.log(userEmail, userPassword)}
             <Card 
                 className="p-4" 
                 style={{width: '95vh'}}>

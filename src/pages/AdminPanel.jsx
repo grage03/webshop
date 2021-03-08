@@ -14,6 +14,7 @@ export default function AdminPanel() {
             <Button variant="info" className="mt-4" onClick={() => setModalDevice(true)}>Добавить устройство</Button>
             <Button variant="info" className="mt-4" onClick={() => setModalType(true)}>Добавить тип</Button>
             <Button variant="info" className="mt-4">Добавить промокод</Button>
+            <Button variant="info" className="mt-4">Статистика промокодов</Button>
             <ModalType modalType={modalType} setModalType={setModalType}/>
             <ModalDevice modalDevice={modalDevice} setModalDevice={setModalDevice}/>
         </Container>

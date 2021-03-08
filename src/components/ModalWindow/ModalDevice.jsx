@@ -86,7 +86,7 @@ const ModalDevice = observer(({ modalDevice, setModalDevice}) => {
                     </Form>        
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="outline-info" onClick={() => addDevice()}>
+                    <Button variant="outline-success" onClick={() => addDevice()}>
                         Добавить
                     </Button>
                 </Modal.Footer>

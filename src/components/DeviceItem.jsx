@@ -33,14 +33,13 @@ const DeviceItem = observer((props) => {
     }
 
     const addBasketDevice = (id) => {
-        const isItemInBasket = [...devices.basketDevices.map(item => item)].map(item => item.id === id) || 1;
+        const isItemInBasket = [...devices.basketDevices.map(item => item)].map(item => item.id === id);
 
-
-        console.log(isItemInBasket[isItemInBasket.length - 1])
-        if (isItemInBasket[isItemInBasket.length - 1]) {
+        if (isItemInBasket.includes(true)) {
             const itemIndex = devices.basketDevices.findIndex(item => item.id === id);
-            
+
             const newBasketDevices = devices.basketDevices.map((item, index) => {
+
                 if (index === itemIndex) return { ...item, quantity: item.quantity + 1 };
                 else return item;
 
@@ -89,10 +88,7 @@ const DeviceItem = observer((props) => {
                             >Подробнее</Button>
                             {
                                 user.isLogin 
-                                    ? <Button 
-                                        variant="info" 
-                                        onClick={() => addBasketDevice(id)}
-                                        >Добавить в корзину</Button>
+                                    ? <Button variant="info" onClick={() => addBasketDevice(id)}>Добавить в корзину</Button>
                                     : null
                             }
                         </div>

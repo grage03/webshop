@@ -23,10 +23,7 @@ const ModalType = ({modalType, setModalType}) => {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="danger" onClick={() => setModalType(false)}>
-                        Закрыть
-                    </Button>
-                    <Button variant="success" onClick={() => {
+                    <Button variant="outline-success" onClick={() => {
                         devices.setSection([...devices.section, {id: devices.section.length + 1, device: type}]);
                         setModalType(false);
                         setType('');
