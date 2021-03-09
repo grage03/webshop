@@ -2,4 +2,4 @@
 
 ### Главное окно `/store` неавторизованного пользователя
 
-![alt](https://imgur.com/sE84NPw "Input/output information")
+![alt](https://i.imgur.com/sE84NPw.png "Input/output information")
