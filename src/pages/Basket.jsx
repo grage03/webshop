@@ -8,7 +8,9 @@ import { PromocodeBlock } from '../components/PromocodeBlock';
 const Basket = observer(() => {
     const { devices } = useContext(Context);
 
-    const [ discount, setDiscount ] = useState(0);
+    const 
+        [ discount, setDiscount ] = useState(0),
+        [ isPromocode, setIsPromocode ] = useState('');
 
     const checkFinalPrice = () => {
         let finalPrice = 0;
@@ -21,11 +23,17 @@ const Basket = observer(() => {
     return (
         <Container style={{display: 'flex', flexDirection: 'column'}}>
 
-            <Button variant="info" className="mt-5 mb-5" style={{margin: '0 auto'}}>Оформить заказ</Button>
+            <Button variant="info" className="mt-5 mb-3" style={{margin: '0 auto'}}>Оформить заказ</Button>
 
-            <h1 className="mb-5" style={{margin: '0 auto'}}>Итоговая сумма - {checkFinalPrice()} руб.</h1>
+            <h1 className="mb-3" style={{margin: '0 auto'}}>Итоговая сумма - {checkFinalPrice()} руб.</h1>
+            {
+                discount !== 0
+                    ? (
+                        <h3 className="mb-3" style={{textAlign: 'center'}}>Цена со скидкой - {checkFinalPrice() - (checkFinalPrice() * discount / 100)} руб.</h3>
+                    ) : null
+            }
 
-            <PromocodeBlock discount={discount} setDiscount={setDiscount}/>
+            <PromocodeBlock setDiscount={setDiscount} isPromocode={isPromocode} setIsPromocode={setIsPromocode}/>
 
             {
                 devices.basketDevices.map(item => {
